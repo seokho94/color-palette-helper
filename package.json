@@ -1,0 +1,44 @@
+{
+  "name": "color-palette-helper",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^14.2.21",
+    "chroma-js": "^3.1.2",
+    "colorthief": "^2.4.0",
+    "react-colorful": "^5.6.1",
+    "zustand": "^5.0.2",
+    "lucide-react": "^0.468.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/chroma-js": "^2.4.4",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^14.2.21",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "vitest": "^2.1.8",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/jest-dom": "^6.6.3"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
