@@ -6,6 +6,11 @@ import { usePaletteStore } from '@/store/usePaletteStore'
 
 const HARMONY_OPTIONS: { value: HarmonyRule; label: string; description: string }[] = [
   {
+    value: 'm3-tonal',
+    label: 'Material Design 3 Tonal',
+    description: 'Tonal palette (13-step tone scale)',
+  },
+  {
     value: 'complementary',
     label: 'Complementary',
     description: 'Opposite colors (180°)',

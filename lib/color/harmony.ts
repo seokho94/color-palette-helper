@@ -129,6 +129,27 @@ export function generateMonochromatic(baseColor: string): string[] {
 }
 
 /**
+ * Material Design 3 Tonal Palette 방식
+ * 기준 색상에서 명도 단계별 색상 생성
+ */
+export function generateM3Tonal(baseColor: string): string[] {
+  const base = chroma(baseColor)
+  const hue = base.get('hsl.h')
+  const sat = base.get('hsl.s')
+
+  // Material Design 3의 주요 톤 값 선택
+  // Tone 40 (Primary), 80 (Light), 90 (Container), 30 (Dark), 95 (Surface), 10 (On Surface)
+  return [
+    chroma.hsl(hue, sat, 0.40).hex(),       // Primary (tone 40)
+    chroma.hsl(hue, sat, 0.80).hex(),       // Light Primary (tone 80)
+    chroma.hsl(hue, sat, 0.90).hex(),       // Container (tone 90)
+    chroma.hsl(hue, sat, 0.30).hex(),       // Dark Primary (tone 30)
+    chroma.hsl(hue, sat * 0.1, 0.95).hex(), // Surface (tone 95, neutral)
+    chroma.hsl(hue, sat * 0.1, 0.10).hex(), // On Surface (tone 10, neutral)
+  ]
+}
+
+/**
  * Harmony 규칙에 따른 팔레트 생성
  */
 export function generatePalette(baseColor: string, rule: HarmonyRule): string[] {
@@ -145,6 +166,8 @@ export function generatePalette(baseColor: string, rule: HarmonyRule): string[] 
       return generateTetradic(baseColor)
     case 'monochromatic':
       return generateMonochromatic(baseColor)
+    case 'm3-tonal':
+      return generateM3Tonal(baseColor)
     default:
       return [baseColor]
   }

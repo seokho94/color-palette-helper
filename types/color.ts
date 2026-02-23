@@ -20,6 +20,7 @@ export type HarmonyRule =
   | 'split-complementary'
   | 'tetradic'
   | 'monochromatic'
+  | 'm3-tonal'
 
 /**
  * Color palette
