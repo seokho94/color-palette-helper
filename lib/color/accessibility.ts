@@ -125,7 +125,7 @@ export function fixContrast(
 
   // 배경이 밝으면 전경을 어둡게, 어두우면 밝게
   let newColor = color
-  let step = 0.1
+  const step = 0.1
 
   for (let i = 0; i < 50; i++) {
     const ratio = getContrastRatio(newColor.hex(), background)

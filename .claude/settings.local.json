@@ -10,7 +10,11 @@
       "Bash(echo:*)",
       "Bash(pnpm test:*)",
       "Bash(pnpm add:*)",
-      "Bash(pnpm type-check:*)"
+      "Bash(pnpm type-check:*)",
+      "Bash(pnpm build:*)",
+      "Bash(git reset:*)",
+      "Bash(git push:*)",
+      "Bash(pnpm lint:*)"
     ]
   }
 }
