@@ -24,7 +24,13 @@ export const PALETTE_CONFIG = {
 export const IMAGE_CONFIG = {
   maxSize: 5 * 1024 * 1024, // 5MB
   allowedFormats: ['image/jpeg', 'image/png', 'image/webp'],
+  colorCount: 6, // 추출할 색상 개수
 } as const
+
+/**
+ * Debounce delay
+ */
+export const DEBOUNCE_DELAY = 500 // ms
 
 /**
  * Accessibility configuration

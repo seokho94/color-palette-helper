@@ -2,14 +2,17 @@
 
 Generate beautiful, accessible color palettes for your web projects with AI-powered recommendations and automatic WCAG compliance checking.
 
-## 🚀 Features
+## ✨ Features
 
-- **Color Harmony Rules**: Generate palettes using proven color theory (Complementary, Analogous, Triadic, etc.)
-- **Image Color Extraction**: Upload an image and extract dominant colors automatically
-- **Accessibility Checking**: Automatic WCAG AA/AAA contrast ratio validation
-- **Live Preview**: See your colors applied to real UI components
-- **Multiple Export Formats**: Copy as HEX, RGB, HSL, CSS Variables, Tailwind Config, or JSON
-- **History & Favorites**: Save and manage your color palettes locally
+- 🎨 **6 Harmony Rules**: Complementary, Analogous, Triadic, Split-Complementary, Tetradic, Monochromatic
+- 🖼️ **Image Color Extraction**: Upload images and extract dominant colors using ColorThief
+- ♿ **WCAG Compliance**: Automatic AA/AAA contrast ratio checking with fix suggestions
+- 👁️ **Live Preview**: See colors applied to buttons, cards, forms, and typography
+- 📤 **7 Export Formats**: HEX, RGB, HSL, CSS Variables, SCSS, Tailwind Config, JSON
+- 💾 **History & Favorites**: Save up to 50 palettes with LocalStorage persistence
+- 🔗 **URL Sharing**: Share palettes via URL with query parameters
+- 🔒 **Color Locking**: Lock specific colors while regenerating the rest
+- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
 
 ## 🛠️ Tech Stack
 
@@ -63,7 +66,7 @@ All project documentation is available in the `docs/` folder:
 - [Frontend Architecture](./docs/1.Plan/06-Frontend-Architecture.md)
 - [Development Schedule](./docs/1.Plan/07-Development-Schedule.md)
 
-## 🧪 Development
+## 🧪 Development & Testing
 
 ```bash
 # Run type checking
@@ -74,6 +77,15 @@ pnpm lint
 
 # Format code
 pnpm format
+
+# Run tests
+pnpm test
+
+# Run tests with UI
+pnpm test:ui
+
+# Run tests with coverage
+pnpm test:coverage
 ```
 
 ## 📂 Project Structure
@@ -97,14 +109,56 @@ color-palette-helper/
 └── docs/                  # Documentation
 ```
 
-## 🎯 Roadmap
+## 🎯 Development Progress
 
-- [x] Week 1: Foundation & Basic UI
-- [ ] Week 2: Core Features (Image extraction, Preview)
-- [ ] Week 3: Advanced Features (Accessibility, Export)
-- [ ] Week 4: Testing & Deployment
+- ✅ **Week 1**: Foundation & Basic UI (100%)
+  - Project setup, Layout, Color input, Image upload
+- ✅ **Week 2**: Core Features (100%)
+  - Palette generation, Accessibility checks, UI preview
+- ✅ **Week 3**: Advanced Features (100%)
+  - Export functionality, History & Favorites, URL sharing
+- ✅ **Week 4**: Testing & Deployment (87%)
+  - Unit tests, Integration tests, SEO optimization, Vercel deployment
 
-See [Development Schedule](./docs/1.Plan/07-Development-Schedule.md) for details.
+**Overall Progress**: 87% complete (78/90 tasks)
+
+See [Task Manager](./docs/4.DevelopPlan/Task-Manager.md) for detailed progress tracking.
+
+## 🧪 Testing
+
+This project uses **Vitest** and **Testing Library** for comprehensive test coverage:
+
+- **Unit Tests**: Color conversion, harmony algorithms, WCAG calculations, URL encoding
+- **Component Tests**: ColorPicker, PaletteDisplay, AccessibilityCheck
+- **Integration Tests**: Full palette generation workflow, URL sharing, history management
+
+```bash
+# Run all tests
+pnpm test
+
+# Watch mode for development
+pnpm test --watch
+
+# Generate coverage report
+pnpm test:coverage
+```
+
+## 🚀 Deployment
+
+This project is optimized for deployment on **Vercel**:
+
+```bash
+# Install Vercel CLI
+pnpm add -g vercel
+
+# Deploy to Vercel
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+Alternatively, connect your GitHub repository to Vercel for automatic deployments on every push to `main`.
 
 ## 📄 License
 

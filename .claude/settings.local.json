@@ -6,7 +6,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(pnpm install:*)",
-      "Bash(pnpm run type-check:*)"
+      "Bash(pnpm run type-check:*)",
+      "Bash(echo:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm add:*)"
     ]
   }
 }
