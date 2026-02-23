@@ -43,7 +43,7 @@ export function PreviewForm() {
           <div>
             <label
               className="mb-1 block text-sm font-medium"
-              style={{ color: roles.text.hex }}
+              style={{ color: roles.textOnBackground }}
             >
               Email Address
             </label>
@@ -52,8 +52,8 @@ export function PreviewForm() {
               placeholder="you@example.com"
               className="w-full rounded-lg border px-4 py-2 text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: roles.text.hex,
-                color: roles.text.hex,
+                borderColor: roles.textOnBackground,
+                color: roles.textOnBackground,
                 borderWidth: '1px',
               }}
             />
@@ -63,7 +63,7 @@ export function PreviewForm() {
           <div>
             <label
               className="mb-1 block text-sm font-medium"
-              style={{ color: roles.text.hex }}
+              style={{ color: roles.textOnBackground }}
             >
               Message
             </label>
@@ -72,8 +72,8 @@ export function PreviewForm() {
               rows={3}
               className="w-full rounded-lg border px-4 py-2 text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: roles.text.hex,
-                color: roles.text.hex,
+                borderColor: roles.textOnBackground,
+                color: roles.textOnBackground,
                 borderWidth: '1px',
               }}
             />
@@ -90,7 +90,7 @@ export function PreviewForm() {
             <label
               htmlFor="terms"
               className="text-sm"
-              style={{ color: roles.text.hex }}
+              style={{ color: roles.textOnBackground }}
             >
               I agree to the terms and conditions
             </label>

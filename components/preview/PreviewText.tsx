@@ -42,7 +42,7 @@ export function PreviewText() {
         {/* Heading 1 */}
         <h1
           className="mb-4 text-4xl font-bold"
-          style={{ color: roles.text.hex }}
+          style={{ color: roles.textOnBackground }}
         >
           Heading 1
         </h1>
@@ -50,7 +50,7 @@ export function PreviewText() {
         {/* Heading 2 */}
         <h2
           className="mb-3 text-3xl font-bold"
-          style={{ color: roles.text.hex }}
+          style={{ color: roles.textOnBackground }}
         >
           Heading 2
         </h2>
@@ -58,7 +58,7 @@ export function PreviewText() {
         {/* Heading 3 */}
         <h3
           className="mb-3 text-2xl font-semibold"
-          style={{ color: roles.text.hex }}
+          style={{ color: roles.textOnBackground }}
         >
           Heading 3
         </h3>
@@ -66,7 +66,7 @@ export function PreviewText() {
         {/* Paragraph */}
         <p
           className="mb-4 text-base leading-relaxed"
-          style={{ color: roles.text.hex, opacity: 0.9 }}
+          style={{ color: roles.textOnBackground, opacity: 0.9 }}
         >
           This is a paragraph with body text. The quick brown fox jumps over
           the lazy dog. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -76,7 +76,7 @@ export function PreviewText() {
         <a
           href="#"
           className="font-medium underline"
-          style={{ color: roles.primary.hex }}
+          style={{ color: roles.accent.hex }}
         >
           This is a link
         </a>
@@ -84,7 +84,7 @@ export function PreviewText() {
         {/* Small Text */}
         <p
           className="mt-4 text-sm"
-          style={{ color: roles.text.hex, opacity: 0.7 }}
+          style={{ color: roles.textOnBackground, opacity: 0.7 }}
         >
           Small text for captions and footnotes.
         </p>

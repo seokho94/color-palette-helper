@@ -9,7 +9,8 @@
       "Bash(pnpm run type-check:*)",
       "Bash(echo:*)",
       "Bash(pnpm test:*)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "Bash(pnpm type-check:*)"
     ]
   }
 }

@@ -49,14 +49,14 @@ export function PreviewCard() {
 
         <h4
           className="mb-2 text-xl font-bold"
-          style={{ color: roles.text.hex }}
+          style={{ color: roles.textOnBackground }}
         >
           Card Title
         </h4>
 
         <p
           className="mb-4 text-sm"
-          style={{ color: roles.text.hex, opacity: 0.8 }}
+          style={{ color: roles.textOnBackground, opacity: 0.8 }}
         >
           This is a preview of how your color palette looks in a card component.
           The colors are automatically assigned based on your palette.

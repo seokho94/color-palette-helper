@@ -10,10 +10,11 @@ export interface ColorRoles {
   secondary: Color
   accent: Color
   background: Color
-  text: Color
+  text: string // HEX 문자열로 변경 (대비를 위해)
   textOnPrimary: string
   textOnSecondary: string
   textOnAccent: string
+  textOnBackground: string // 배경에 대비되는 텍스트 색상
 }
 
 /**
@@ -27,17 +28,21 @@ export function assignColorRoles(colors: Color[]): ColorRoles {
     throw new Error('At least 5 colors required')
   }
 
-  const [primary, secondary, accent, background, text] = colors
+  const [primary, secondary, accent, background] = colors
+
+  // 배경색에 대비되는 텍스트 색상을 자동 계산
+  const textOnBackground = getContrastColor(background.hex)
 
   return {
     primary,
     secondary,
     accent,
     background,
-    text,
+    text: textOnBackground, // 배경과 대비되는 색상 사용
     textOnPrimary: getContrastColor(primary.hex),
     textOnSecondary: getContrastColor(secondary.hex),
     textOnAccent: getContrastColor(accent.hex),
+    textOnBackground, // 명시적으로 제공
   }
 }
 
