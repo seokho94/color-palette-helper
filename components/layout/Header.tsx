@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Palette, HelpCircle, History } from 'lucide-react'
 import { HistorySidebar } from '@/components/history/HistorySidebar'
 import { ShareButton } from '@/components/share/ShareButton'
+import { ThemeToggle } from '@/components/theme/ThemeToggle'
 
 export function Header() {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false)
@@ -23,6 +24,7 @@ export function Header() {
 
           {/* Right: Actions */}
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <ShareButton />
 
             <button

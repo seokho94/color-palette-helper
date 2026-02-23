@@ -1,5 +1,6 @@
 // lib/color/tonal.ts
 import chroma from 'chroma-js'
+import { generatePerceptualTones } from './perceptual'
 
 /**
  * Material Design 3 Tonal Palette
@@ -34,9 +35,13 @@ export interface TonalPalette {
  * 단일 색상에서 Tonal Palette 생성
  *
  * @param baseColor - 기준 색상 (HEX)
+ * @param usePerceptual - LAB 색상 공간 사용 (더 균일한 톤)
  * @returns 13단계 Tonal Palette
  */
-export function generateTonalPalette(baseColor: string): TonalPalette {
+export function generateTonalPalette(
+  baseColor: string,
+  usePerceptual: boolean = true
+): TonalPalette {
   const color = chroma(baseColor)
   const hue = color.get('hsl.h')
   const saturation = color.get('hsl.s')
@@ -44,6 +49,19 @@ export function generateTonalPalette(baseColor: string): TonalPalette {
   // Material Design 3의 톤 값 (0~100)
   const tones = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100]
 
+  // LAB 색상 공간 사용 (더 균일한 인지 톤)
+  if (usePerceptual) {
+    const colors = generatePerceptualTones(baseColor, tones)
+    const palette: Partial<TonalPalette> = {}
+
+    tones.forEach((tone, index) => {
+      palette[tone as keyof TonalPalette] = colors[index]
+    })
+
+    return palette as TonalPalette
+  }
+
+  // HSL 기반 (기존 방식)
   const palette: Partial<TonalPalette> = {}
 
   tones.forEach((tone) => {
