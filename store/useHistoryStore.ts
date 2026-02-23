@@ -34,8 +34,8 @@ export const useHistoryStore = create<HistoryState>()(
           // 최대 개수 제한
           if (updated.length > state.maxHistory) {
             // 즐겨찾기가 아닌 항목부터 삭제
-            const favorites = updated.filter((p) => p.favorite)
-            const nonFavorites = updated.filter((p) => !p.favorite)
+            const favorites = updated.filter((p) => p.isFavorite)
+            const nonFavorites = updated.filter((p) => !p.isFavorite)
 
             if (nonFavorites.length > state.maxHistory - favorites.length) {
               nonFavorites.pop()
@@ -58,7 +58,7 @@ export const useHistoryStore = create<HistoryState>()(
       toggleFavorite: (id) =>
         set((state) => ({
           palettes: state.palettes.map((p) =>
-            p.id === id ? { ...p, favorite: !p.favorite } : p
+            p.id === id ? { ...p, isFavorite: !p.isFavorite } : p
           ),
         })),
 

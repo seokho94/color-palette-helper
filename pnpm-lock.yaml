@@ -54,6 +54,9 @@ importers:
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.5
+      '@types/colorthief':
+        specifier: ^2.6.1
+        version: 2.6.1
       '@types/node':
         specifier: ^22.10.2
         version: 22.19.11
@@ -859,6 +862,9 @@ packages:
 
   '@types/chroma-js@2.4.5':
     resolution: {integrity: sha512-6ISjhzJViaPCy2q2e6PgK+8HcHQDQ0V2LDiKmYAh+jJlLqDa6HbwDh0wOevHY0kHHUx0iZwjSRbVD47WOUx5EQ==}
+
+  '@types/colorthief@2.6.1':
+    resolution: {integrity: sha512-3hlRky7ybPuQDNx3RV29P/CTvuC7zkk//Xt/NyOwNg5RhL/y54a0q4aW7MNMkvBkGJqX2g2igNCoCh3ZtK4gZQ==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -3618,6 +3624,10 @@ snapshots:
       '@babel/types': 7.29.0
 
   '@types/chroma-js@2.4.5': {}
+
+  '@types/colorthief@2.6.1':
+    dependencies:
+      '@types/node': 22.19.11
 
   '@types/estree@1.0.8': {}
 

@@ -26,9 +26,10 @@ export type HarmonyRule =
  */
 export interface Palette {
   id: string
+  name?: string
   colors: Color[]
   baseColor: string
   harmonyRule: HarmonyRule
-  createdAt: Date
+  createdAt: number
   isFavorite?: boolean
 }

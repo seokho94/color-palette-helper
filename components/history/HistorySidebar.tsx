@@ -20,7 +20,7 @@ export function HistorySidebar({ isOpen, onClose }: HistorySidebarProps) {
 
   const filteredPalettes =
     filter === 'favorites'
-      ? palettes.filter((p) => p.favorite)
+      ? palettes.filter((p) => p.isFavorite)
       : palettes
 
   return (
@@ -72,7 +72,7 @@ export function HistorySidebar({ isOpen, onClose }: HistorySidebarProps) {
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
-            Favorites ({palettes.filter((p) => p.favorite).length})
+            Favorites ({palettes.filter((p) => p.isFavorite).length})
           </button>
         </div>
 

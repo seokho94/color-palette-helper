@@ -56,13 +56,13 @@ export function PaletteHistoryItem({ palette, onSelect }: PaletteHistoryItemProp
           <button
             onClick={handleToggleFavorite}
             className={`transition-opacity ${
-              palette.favorite ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              palette.isFavorite ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
             }`}
-            aria-label={palette.favorite ? 'Remove from favorites' : 'Add to favorites'}
+            aria-label={palette.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           >
             <Heart
               className={`h-4 w-4 ${
-                palette.favorite
+                palette.isFavorite
                   ? 'fill-red-500 text-red-500'
                   : 'text-gray-400 hover:text-red-500'
               }`}

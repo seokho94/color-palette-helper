@@ -16,7 +16,7 @@ export function ImageUpload() {
 
   const handleFile = useCallback(async (file: File) => {
     // Validate file
-    if (!IMAGE_CONFIG.allowedFormats.includes(file.type)) {
+    if (!IMAGE_CONFIG.allowedFormats.includes(file.type as any)) {
       setError('Only JPG, PNG, WebP formats are supported')
       return
     }
