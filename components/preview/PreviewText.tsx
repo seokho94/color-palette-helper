@@ -3,6 +3,7 @@
 
 import { useMemo } from 'react'
 import { usePaletteStore } from '@/store/usePaletteStore'
+import { useThemeStore } from '@/store/useThemeStore'
 import { assignColorRoles } from '@/lib/color/roles'
 
 /**
@@ -16,12 +17,13 @@ import { assignColorRoles } from '@/lib/color/roles'
  * - Accent 텍스트
  */
 export function PreviewText() {
-  const { colors } = usePaletteStore()
+  const { colors, baseColor, harmonyRule } = usePaletteStore()
+  const { theme } = useThemeStore()
 
   const roles = useMemo(() => {
     if (colors.length < 5) return null
-    return assignColorRoles(colors)
-  }, [colors])
+    return assignColorRoles(colors, harmonyRule, baseColor, theme)
+  }, [colors, harmonyRule, baseColor, theme])
 
   if (!roles) {
     return (

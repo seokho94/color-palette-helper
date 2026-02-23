@@ -3,6 +3,7 @@
 
 import { useMemo } from 'react'
 import { usePaletteStore } from '@/store/usePaletteStore'
+import { useThemeStore } from '@/store/useThemeStore'
 import { assignColorRoles } from '@/lib/color/roles'
 
 /**
@@ -13,12 +14,13 @@ import { assignColorRoles } from '@/lib/color/roles'
  * - 반전 카드: primary 색상을 배경으로 사용
  */
 export function PreviewCard() {
-  const { colors } = usePaletteStore()
+  const { colors, baseColor, harmonyRule } = usePaletteStore()
+  const { theme } = useThemeStore()
 
   const roles = useMemo(() => {
     if (colors.length < 5) return null
-    return assignColorRoles(colors)
-  }, [colors])
+    return assignColorRoles(colors, harmonyRule, baseColor, theme)
+  }, [colors, harmonyRule, baseColor, theme])
 
   if (!roles) {
     return (
